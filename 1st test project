@@ -1,0 +1,33 @@
+--View of DB
+
+SELECT * 
+FROM superstore
+;
+
+--Write a SQL query that orders the items by price.
+
+SELECT item_id
+, item_name
+, price 
+FROM superstore
+ORDER BY price
+;
+
+--Write your own SQL query that will show a statistic about the item prices, like a sum, average, minimum, maximum, or count. Items with 20 or more sorted by rating. 
+
+SELECT item_id, item_name, stock_quantity, average_rating
+FROM superstore
+WHERE stock_quantity>19
+ORDER BY average_rating
+;
+
+--Write your own SQL query that will show a statistic about the price for items in the category of "Kitchen Supplies".
+--How many Robot Vacuum Cleaners are in stock? 
+
+SELECT SUM(stock_quantity) 
+, item_name
+, price
+, average_rating
+FROM superstore
+WHERE item_id = 4
+;
